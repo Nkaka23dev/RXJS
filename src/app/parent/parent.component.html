@@ -1,0 +1,6 @@
+<div style="text-align: center; padding: 60px;">
+<h1>Parent Components is workingss</h1> 
+<h2 style="color: red;">{{messageDisplay}}</h2>
+<h2>{{userDetails | json}}</h2>
+</div> 
+<app-child [reveiveData]="giveBack" (ChildDataPhaseTwo)=getChildData($event)></app-child>
