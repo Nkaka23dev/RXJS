@@ -13,32 +13,31 @@ export class Rxjs1Component implements OnInit {
   agent! : any; 
 
   ngOnInit(): void {
-    this.agent = new Observable((observer) => { 
-      try {
-      for (let i = 0; i<=5; i++){ 
-        setTimeout(() => {
-          observer.next(i);
-        }, 3000)
-      }
-    }
-     catch (e) {
-     observer.error(e);
-     } 
-    //  observer.complete(); 
-    }); 
-  let observer= {
-    next: (response: any) => {
-      console.log(response);
-    },
-    error: (err: any) => {
-      console.log(err);
-    },
-   //  complete: () => {s
-   //    console.log('Done!');
-   //  },
-  }
-   this.agent.subscribe(observer); 
-   this.agent.subscribe(observer);
+  //   this.agent = new Observable((observer) => { 
+  //     try {
+  //     for (let i = 0; i<=5; i++){ 
+  //       setTimeout(() => {
+  //         observer.next(i);
+  //       }, 3000)
+  //     }
+  //   }
+  //    catch (e) {
+  //    observer.error(e);
+  //    } 
+  //   //  observer.complete(); 
+  //   }); 
+  // let observer= {
+  //   next: (response: any) => {
+  //     console.log(response);
+  //   },
+  //   error: (err: any) => {
+  //     console.log(err);
+  //   },
+  //  //  complete: () => {s
+  //  //    console.log('Done!');
+  //  //  },
+  // }
+  //  this.agent.subscribe(observer); 
 
   }
 

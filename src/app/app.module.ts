@@ -15,6 +15,7 @@ import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { FilterUserdComponent } from './users/filter-userd/filter-userd.component';
 import { Rxjs1Component } from './rxjs/rxjs1/rxjs1.component';
+import { Rxjs2Component } from './rxjs/rxjs2/rxjs2.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { Rxjs1Component } from './rxjs/rxjs1/rxjs1.component';
     RxjsLearningComponent,
     ListUsersComponent,
     FilterUserdComponent,
-    Rxjs1Component
+    Rxjs1Component,
+    Rxjs2Component
   ],
   imports: [
     BrowserModule,
