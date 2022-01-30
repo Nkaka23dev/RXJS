@@ -1,3 +1,6 @@
-<p>list-users works!</p> 
-
-<filter-userd [data]="listData"></filter-userd> 
+<div style="text-align: center; color: royalblue;">
+    <h1>This is the List User component.</h1>
+    <h2>{{receiveData | json}}</h2>
+</div>
+ 
+<filter-userd [DataParent]="parentData" (getDataFromChild)="GetFromChild($event)"></filter-userd>

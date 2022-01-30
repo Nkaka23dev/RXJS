@@ -16,6 +16,7 @@ import { ListUsersComponent } from './users/list-users/list-users.component';
 import { FilterUserdComponent } from './users/filter-userd/filter-userd.component';
 import { Rxjs1Component } from './rxjs/rxjs1/rxjs1.component';
 import { Rxjs2Component } from './rxjs/rxjs2/rxjs2.component';
+import { Rxjs3Component } from './rxjs/rxjs3/rxjs3.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { Rxjs2Component } from './rxjs/rxjs2/rxjs2.component';
     ListUsersComponent,
     FilterUserdComponent,
     Rxjs1Component,
-    Rxjs2Component
+    Rxjs2Component,
+    Rxjs3Component
   ],
   imports: [
     BrowserModule,

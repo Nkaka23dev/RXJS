@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+
+
 
 @Component({
   selector: 'filter-userd',
@@ -6,11 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./filter-userd.component.css']
 })
 export class FilterUserdComponent implements OnInit {
-  
-  @Input() data!: String
+  @Input() DataParent: any; 
+  @Output() getDataFromChild: any = new EventEmitter();
+
+  posts ={
+    title : "Hello first post", 
+    date: "June 2022", 
+    author: "Nkaka Eric", 
+    content: "This is a warm welcome post to you all my people."
+  } 
+   
   constructor() { }
 
   ngOnInit(): void {
+    this.getDataFromChild.emit(this.posts);
   }
 
 }
