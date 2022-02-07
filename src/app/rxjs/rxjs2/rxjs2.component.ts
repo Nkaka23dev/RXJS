@@ -39,8 +39,6 @@ export class Rxjs2Component implements OnInit, AfterViewInit{
         }
       }
     )
-
-
    this.timeconsoleSubcriber = newObservable.subscribe({
       next: (data) => {
       console.log(new Date().toLocaleTimeString()+ ' '+ data); 

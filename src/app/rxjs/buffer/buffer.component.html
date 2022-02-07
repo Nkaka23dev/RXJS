@@ -1,0 +1,9 @@
+<div style="text-align: center;">
+<button style="background-color: seashell; padding: 10px; cursor: pointer; margin-top: 30px;" (click)="startInterval()">Set Interval</button> <br> 
+<button style="background-color: seashell; padding: 10px; cursor: pointer; margin-top: 60px;" id="showButton">Show Data Now</button> 
+<div *ngIf="bufferData.length">
+    <div *ngFor="let data of bufferData">
+         {{data}}
+    </div>
+</div>
+</div>

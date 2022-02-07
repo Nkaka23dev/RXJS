@@ -1,0 +1,6 @@
+<div style="text-align: center;">
+  <h2 style="color: red;">{{getKidMessage}}</h2> 
+  <h3 style="color: royalblue;">{{messageReceived}}</h3>
+</div>
+
+<app-child2 (messageToParent)="getChildMessage($event)" [parentMessage]="parentMessage"></app-child2>

@@ -44,7 +44,7 @@ export class RxjsLearningComponent implements OnInit {
     }
   });
 
-  this.  promiseObservable$.subscribe({
+  this.promiseObservable$.subscribe({
     next: (response: any) => {
       console.log(response), (this.myData = response);
     },

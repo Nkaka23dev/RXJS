@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';  
+import {RouterModule, Routes} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,27 @@ import { FilterUserdComponent } from './users/filter-userd/filter-userd.componen
 import { Rxjs1Component } from './rxjs/rxjs1/rxjs1.component';
 import { Rxjs2Component } from './rxjs/rxjs2/rxjs2.component';
 import { Rxjs3Component } from './rxjs/rxjs3/rxjs3.component';
+import { Parent2Component } from './parent2/parent2.component';
+import { Child2Component } from './child2/child2.component';
+import { BufferComponent } from './rxjs/buffer/buffer.component';
+import { BuffercountComponent } from './rxjs/buffercount/buffercount.component';
+import { SwitchMapComponent } from './rxjs/switch-map/switch-map.component';
+import { SubjectsComponent } from './rxjs/subjects/subjects.component';
+import { Subject2Component } from './rxjs/subject2/subject2.component';
+import { HomeComponent } from './route/home/home.component';
+import { CategoryComponent } from './route/category/category.component';
+import { UsersComponent } from './route/users/users.component';
+import { UserComponent } from './route/user/user.component';   
 
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  {
+    path: 'users',
+    component: UsersComponent,
+    children: [{ path: ':id/:name', component: UserComponent }],
+  },
+  { path: 'category', component: CategoryComponent },
+];
 
 @NgModule({
   declarations: [
@@ -30,10 +51,22 @@ import { Rxjs3Component } from './rxjs/rxjs3/rxjs3.component';
     FilterUserdComponent,
     Rxjs1Component,
     Rxjs2Component,
-    Rxjs3Component
+    Rxjs3Component,
+    Parent2Component,
+    Child2Component,
+    BufferComponent,
+    BuffercountComponent,
+    SwitchMapComponent,
+    SubjectsComponent,
+    Subject2Component,
+    HomeComponent,
+    CategoryComponent,
+    UsersComponent,
+    UserComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
+    RouterModule.forRoot(appRoutes),
     AppRoutingModule,
     BrowserAnimationsModule,  
     MaterialsModule, MatTableModule, MatPaginatorModule, MatSortModule
