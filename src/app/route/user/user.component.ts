@@ -1,30 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit { 
+export class UserComponent implements OnInit {  
 
-  user!: {id: string, name: string}
+  users!:{id: string, name: string}
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRouter: ActivatedRoute, private router: Router)
+   { }
 
-  ngOnInit(): void {   
+  ngOnInit(): void {    
+  
+    // this.users = {
+    //   id: this.activatedRouter.snapshot.params['id'], 
+    //   name: this.activatedRouter.snapshot.params['name'] }
 
-    // this.user = {
-    //   id: this.activatedRoute.snapshot.params['id'], 
-    //   name: this.activatedRoute.snapshot.params['name'] 
-    // } 
-    this.activatedRoute.params.subscribe((response) => {
-      this.user = {
-        id: response['id'], 
-        name: response['name']
+    this.activatedRouter.params.subscribe((data) => {
+      this.users = {
+        id: data['id'], 
+        name: data['name']
       }
     })
-
+    }
+    editUser() {
+       this.router.navigate(['users',this.users.id, this.users.name, 'edit'], {queryParamsHandling: 'preserve'})
+    }
   }
 
-}

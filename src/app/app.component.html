@@ -1,34 +1,37 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <ul class="navbar-nav flex-column nav-pills">
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{'exact':true}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/users" routerLinkActive="active">users</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/category" routerLinkActive="active">category</a>
-                </li>
-              </ul>
-        </div> 
-        <div class="col-md-9">
-            <router-outlet></router-outlet>
-        </div>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <button (click)="login()" class="btn btn-outline-info">Sign In</button> 
+      <button (click)="logout()" class="btn btn-outline-danger">Logout</button>
     </div>
+  </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="navbar-nav flex-column nav-pills">
+        <li class="nav-item"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{'exact': true}" class="nav-link">
+            Home
+          </a></li>
+        <li class="nav-item"><a routerLink="/users" routerLinkActive="active"  class="nav-link">
+            Users
+          </a></li>
+        <li class="nav-item"><a routerLink="/category" routerLinkActive="active"  class="nav-link">
+            Category
+          </a></li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>  --> 
+<app-m-table></app-m-table>
+<!-- 
+<app-rxjs1></app-rxjs1> -->
+<!--  
+<app-data-table></app-data-table> -->
 <!-- <data-table></data-table> --> 
 <!-- <app-parent></app-parent>  -->
 

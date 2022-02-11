@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';  
-import {RouterModule, Routes} from '@angular/router';
-
+import { RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from 'src/materials/materials.module';
-import { DataTableComponent } from './data-table/data-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -26,24 +24,17 @@ import { SwitchMapComponent } from './rxjs/switch-map/switch-map.component';
 import { SubjectsComponent } from './rxjs/subjects/subjects.component';
 import { Subject2Component } from './rxjs/subject2/subject2.component';
 import { HomeComponent } from './route/home/home.component';
-import { CategoryComponent } from './route/category/category.component';
 import { UsersComponent } from './route/users/users.component';
-import { UserComponent } from './route/user/user.component';   
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  {
-    path: 'users',
-    component: UsersComponent,
-    children: [{ path: ':id/:name', component: UserComponent }],
-  },
-  { path: 'category', component: CategoryComponent },
-];
+import { CategoryComponent } from './route/category/category.component';
+import { UserComponent } from './route/user/user.component';
+import { EditUserComponent } from './route/edit-user/edit-user.component';
+import { PageNotFoundComponent } from './route/page-not-found/page-not-found.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import { MTableComponent } from './learnMat/m-table/m-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataTableComponent,
     ParentComponent,
     ChildComponent,
     RxjsLearningComponent,
@@ -58,16 +49,22 @@ const appRoutes: Routes = [
     BuffercountComponent,
     SwitchMapComponent,
     SubjectsComponent,
-    Subject2Component,
+    Subject2Component, 
     HomeComponent,
-    CategoryComponent,
     UsersComponent,
-    UserComponent
+    CategoryComponent,
+    UserComponent,
+    EditUserComponent,
+    PageNotFoundComponent,
+    DataTableComponent,
+    MTableComponent,
+ 
+
   ],
   imports: [
-    BrowserModule, 
-    RouterModule.forRoot(appRoutes),
     AppRoutingModule,
+    RouterModule,
+    BrowserModule, 
     BrowserAnimationsModule,  
     MaterialsModule, MatTableModule, MatPaginatorModule, MatSortModule
   ],

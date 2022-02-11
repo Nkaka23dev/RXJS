@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs'; 
-import { ajax } from 'rxjs/ajax';
-import {map, mergeMap, switchMap} from 'rxjs/operators'
+import { AuthServiceService } from './route/auth-service.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,5 +8,19 @@ import {map, mergeMap, switchMap} from 'rxjs/operators'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent { 
-  title = 't-project';
+  title = 't-project';  
+
+  constructor(private authService: AuthServiceService) {
+
+  } 
+
+  login() {
+    this.authService.login(); 
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+
+
 }

@@ -2,4 +2,8 @@
 
 <div style="text-align: center;">
     <h1>Components works!</h1>   
-</div>
+    <h2>{{message1 }}</h2>   
+    <h1>{{newUser | json}}</h1>
+    <app-rxjs2 (Senduser)="getUser($event)" [receive]="parentMessage"></app-rxjs2>
+</div> 
+

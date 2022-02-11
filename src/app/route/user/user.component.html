@@ -1,13 +1,7 @@
 <div>
-    <h2>Snapshot Identity Is: {{user.id}}</h2>
-    <h2>Name param is: {{user.name}}</h2>
+    <h2>My Id in Urls is: {{users.id}}</h2> 
+    <h2>My name in Urls is: {{users.name}}</h2>
 </div> 
+<div><a [routerLink]="['/users',1, 'Nkaka']" [queryParams]="{'page': 1, 'search': 'nkaka'}" fragment="Load">Go to nkaka details</a></div> 
 
-<!-- <div>
-    <a [routerLink]="['/users',1,'Nkaka']" [queryParams]="{'page': 1, search: 'naka'}" fragment="'load'">Get Nkaka Details</a>
-</div>  -->
-<div>
-    <a [routerLink]="['/users',1,'Nkaka']" [queryParams]="{'page': 1, search: 'naka'}" fragment="'load'">Get Nkaka Details</a>
-</div> 
-
-
+<button (click)="editUser()" class="btn btn-secondary">Edit User</button>

@@ -1,18 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs'; 
+import { Rxjs2Component } from '../rxjs2/rxjs2.component';
 
 @Component({
   selector: 'app-rxjs1',
   templateUrl: './rxjs1.component.html',
   styleUrls: ['./rxjs1.component.css']
 })
-export class Rxjs1Component implements OnInit {
+export class Rxjs1Component implements OnInit, AfterViewInit{ 
+  @ViewChild(Rxjs2Component) childmessage!: Rxjs2Component;  
+
+  message1: any; 
+  parentMessage = "hello child, i heard that you are called rxjs1!"
 
   constructor() { } 
 
+  ngAfterViewInit(): void {
+   this.message1 = this.childmessage.rxjs1message
+  } 
+  newUser: any;
+
   agent! : any; 
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   //   this.agent = new Observable((observer) => { 
   //     try {
   //     for (let i = 0; i<=5; i++){ 
@@ -39,6 +49,9 @@ export class Rxjs1Component implements OnInit {
   // }
   //  this.agent.subscribe(observer); 
 
+  } 
+  getUser(event: any) {
+   this.newUser = event;
   }
 
 }
